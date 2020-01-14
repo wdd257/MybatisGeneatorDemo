@@ -33,10 +33,10 @@ public interface TracingRecordMapper {
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-        "insert into tracing_record (latitude, longitude, ",
-        "creat_time, user_info)",
-        "values (#{latitude,jdbcType=DOUBLE}, #{longitude,jdbcType=DOUBLE}, ",
-        "#{creatTime,jdbcType=TIMESTAMP}, #{userInfo,jdbcType=CHAR})"
+        "insert into tracing_record (am_location_str, create_time, ",
+        "user_info, imei)",
+        "values (#{amLocationStr,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, ",
+        "#{userInfo,jdbcType=VARCHAR}, #{imei,jdbcType=VARCHAR})"
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
     int insert(TracingRecord record);
@@ -48,25 +48,25 @@ public interface TracingRecordMapper {
     @SelectProvider(type=TracingRecordSqlProvider.class, method="selectByExample")
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="latitude", property="latitude", jdbcType=JdbcType.DOUBLE),
-        @Result(column="longitude", property="longitude", jdbcType=JdbcType.DOUBLE),
-        @Result(column="creat_time", property="creatTime", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="user_info", property="userInfo", jdbcType=JdbcType.CHAR)
+        @Result(column="am_location_str", property="amLocationStr", jdbcType=JdbcType.VARCHAR),
+        @Result(column="create_time", property="createTime", jdbcType=JdbcType.TIMESTAMP),
+        @Result(column="user_info", property="userInfo", jdbcType=JdbcType.VARCHAR),
+        @Result(column="imei", property="imei", jdbcType=JdbcType.VARCHAR)
     })
     List<TracingRecord> selectByExample(TracingRecordQuery example);
 
     @Select({
         "select",
-        "id, latitude, longitude, creat_time, user_info",
+        "id, am_location_str, create_time, user_info, imei",
         "from tracing_record",
         "where id = #{id,jdbcType=INTEGER}"
     })
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="latitude", property="latitude", jdbcType=JdbcType.DOUBLE),
-        @Result(column="longitude", property="longitude", jdbcType=JdbcType.DOUBLE),
-        @Result(column="creat_time", property="creatTime", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="user_info", property="userInfo", jdbcType=JdbcType.CHAR)
+        @Result(column="am_location_str", property="amLocationStr", jdbcType=JdbcType.VARCHAR),
+        @Result(column="create_time", property="createTime", jdbcType=JdbcType.TIMESTAMP),
+        @Result(column="user_info", property="userInfo", jdbcType=JdbcType.VARCHAR),
+        @Result(column="imei", property="imei", jdbcType=JdbcType.VARCHAR)
     })
     TracingRecord selectByPrimaryKey(Integer id);
 
@@ -81,10 +81,10 @@ public interface TracingRecordMapper {
 
     @Update({
         "update tracing_record",
-        "set latitude = #{latitude,jdbcType=DOUBLE},",
-          "longitude = #{longitude,jdbcType=DOUBLE},",
-          "creat_time = #{creatTime,jdbcType=TIMESTAMP},",
-          "user_info = #{userInfo,jdbcType=CHAR}",
+        "set am_location_str = #{amLocationStr,jdbcType=VARCHAR},",
+          "create_time = #{createTime,jdbcType=TIMESTAMP},",
+          "user_info = #{userInfo,jdbcType=VARCHAR},",
+          "imei = #{imei,jdbcType=VARCHAR}",
         "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(TracingRecord record);

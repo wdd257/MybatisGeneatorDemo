@@ -6,13 +6,13 @@ import java.util.Date;
 public class TracingRecord implements Serializable {
     private Integer id;
 
-    private Double latitude;
+    private String amLocationStr;
 
-    private Double longitude;
-
-    private Date creatTime;
+    private Date createTime;
 
     private String userInfo;
+
+    private String imei;
 
     private static final long serialVersionUID = 1L;
 
@@ -24,28 +24,20 @@ public class TracingRecord implements Serializable {
         this.id = id;
     }
 
-    public Double getLatitude() {
-        return latitude;
+    public String getAmLocationStr() {
+        return amLocationStr;
     }
 
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
+    public void setAmLocationStr(String amLocationStr) {
+        this.amLocationStr = amLocationStr == null ? null : amLocationStr.trim();
     }
 
-    public Double getLongitude() {
-        return longitude;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-
-    public Date getCreatTime() {
-        return creatTime;
-    }
-
-    public void setCreatTime(Date creatTime) {
-        this.creatTime = creatTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getUserInfo() {
@@ -54,6 +46,14 @@ public class TracingRecord implements Serializable {
 
     public void setUserInfo(String userInfo) {
         this.userInfo = userInfo == null ? null : userInfo.trim();
+    }
+
+    public String getImei() {
+        return imei;
+    }
+
+    public void setImei(String imei) {
+        this.imei = imei == null ? null : imei.trim();
     }
 
     @Override
@@ -69,10 +69,10 @@ public class TracingRecord implements Serializable {
         }
         TracingRecord other = (TracingRecord) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getLatitude() == null ? other.getLatitude() == null : this.getLatitude().equals(other.getLatitude()))
-            && (this.getLongitude() == null ? other.getLongitude() == null : this.getLongitude().equals(other.getLongitude()))
-            && (this.getCreatTime() == null ? other.getCreatTime() == null : this.getCreatTime().equals(other.getCreatTime()))
-            && (this.getUserInfo() == null ? other.getUserInfo() == null : this.getUserInfo().equals(other.getUserInfo()));
+            && (this.getAmLocationStr() == null ? other.getAmLocationStr() == null : this.getAmLocationStr().equals(other.getAmLocationStr()))
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
+            && (this.getUserInfo() == null ? other.getUserInfo() == null : this.getUserInfo().equals(other.getUserInfo()))
+            && (this.getImei() == null ? other.getImei() == null : this.getImei().equals(other.getImei()));
     }
 
     @Override
@@ -80,10 +80,10 @@ public class TracingRecord implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getLatitude() == null) ? 0 : getLatitude().hashCode());
-        result = prime * result + ((getLongitude() == null) ? 0 : getLongitude().hashCode());
-        result = prime * result + ((getCreatTime() == null) ? 0 : getCreatTime().hashCode());
+        result = prime * result + ((getAmLocationStr() == null) ? 0 : getAmLocationStr().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUserInfo() == null) ? 0 : getUserInfo().hashCode());
+        result = prime * result + ((getImei() == null) ? 0 : getImei().hashCode());
         return result;
     }
 
@@ -94,10 +94,10 @@ public class TracingRecord implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", latitude=").append(latitude);
-        sb.append(", longitude=").append(longitude);
-        sb.append(", creatTime=").append(creatTime);
+        sb.append(", amLocationStr=").append(amLocationStr);
+        sb.append(", createTime=").append(createTime);
         sb.append(", userInfo=").append(userInfo);
+        sb.append(", imei=").append(imei);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

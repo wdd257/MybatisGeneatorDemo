@@ -1,5 +1,6 @@
 package com.example.demo.dao;
 
+import com.example.demo.dto.QueryParam;
 import com.example.demo.entity.TracingRecord;
 import com.example.demo.entity.TracingRecordQuery;
 import com.example.demo.mapper.TracingRecordMapper;
@@ -15,16 +16,27 @@ public class TracingRecordDao {
     @Autowired
     TracingRecordMapper tracingRecordMapper;
 
-    public List<TracingRecord> getRecord(int hours, String userInfo) {
+    public List<TracingRecord> getRecord(QueryParam param) {
         TracingRecordQuery tracingRecordQuery = new TracingRecordQuery();
-        if (hours == 0) {
-            hours = 2;
+
+        TracingRecordQuery.Criteria criteria = tracingRecordQuery.createCriteria();
+        if (param.getBathSize() != null) {
+            //todo
         }
-        TracingRecordQuery.Criteria criteria = tracingRecordQuery.createCriteria().andCreatTimeBetween(getBeforeByHourTime(hours), new Date());
-        if (userInfo != null && !userInfo.isEmpty()) {
-            criteria.andUserInfoEqualTo(userInfo);
+        if (param.getHours() != null && param.getHours() != 0) {
+            criteria.andCreateTimeBetween(getBeforeByHourTime(param.getId()), new Date());
         }
-            return tracingRecordMapper.selectByExample(tracingRecordQuery);
+        if (param.getId() != null && param.getId() != 0) {
+            criteria.andIdEqualTo(param.getId());
+        }
+        if (param.getUserInfo() != null && !param.getUserInfo().isEmpty()) {
+            criteria.andUserInfoEqualTo(param.getUserInfo());
+        }
+        if (param.getImei() != null && !param.getImei().isEmpty()) {
+            criteria.andImeiEqualTo(param.getImei());
+        }
+
+        return tracingRecordMapper.selectByExample(tracingRecordQuery);
     }
 
     public static Date getBeforeByHourTime(int ihour) {

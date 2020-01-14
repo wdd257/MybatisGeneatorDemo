@@ -28,20 +28,20 @@ public class TracingRecordSqlProvider {
         SQL sql = new SQL();
         sql.INSERT_INTO("tracing_record");
         
-        if (record.getLatitude() != null) {
-            sql.VALUES("latitude", "#{latitude,jdbcType=DOUBLE}");
+        if (record.getAmLocationStr() != null) {
+            sql.VALUES("am_location_str", "#{amLocationStr,jdbcType=VARCHAR}");
         }
         
-        if (record.getLongitude() != null) {
-            sql.VALUES("longitude", "#{longitude,jdbcType=DOUBLE}");
-        }
-        
-        if (record.getCreatTime() != null) {
-            sql.VALUES("creat_time", "#{creatTime,jdbcType=TIMESTAMP}");
+        if (record.getCreateTime() != null) {
+            sql.VALUES("create_time", "#{createTime,jdbcType=TIMESTAMP}");
         }
         
         if (record.getUserInfo() != null) {
-            sql.VALUES("user_info", "#{userInfo,jdbcType=CHAR}");
+            sql.VALUES("user_info", "#{userInfo,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getImei() != null) {
+            sql.VALUES("imei", "#{imei,jdbcType=VARCHAR}");
         }
         
         return sql.toString();
@@ -54,10 +54,10 @@ public class TracingRecordSqlProvider {
         } else {
             sql.SELECT("id");
         }
-        sql.SELECT("latitude");
-        sql.SELECT("longitude");
-        sql.SELECT("creat_time");
+        sql.SELECT("am_location_str");
+        sql.SELECT("create_time");
         sql.SELECT("user_info");
+        sql.SELECT("imei");
         sql.FROM("tracing_record");
         applyWhere(sql, example, false);
         
@@ -79,20 +79,20 @@ public class TracingRecordSqlProvider {
             sql.SET("id = #{record.id,jdbcType=INTEGER}");
         }
         
-        if (record.getLatitude() != null) {
-            sql.SET("latitude = #{record.latitude,jdbcType=DOUBLE}");
+        if (record.getAmLocationStr() != null) {
+            sql.SET("am_location_str = #{record.amLocationStr,jdbcType=VARCHAR}");
         }
         
-        if (record.getLongitude() != null) {
-            sql.SET("longitude = #{record.longitude,jdbcType=DOUBLE}");
-        }
-        
-        if (record.getCreatTime() != null) {
-            sql.SET("creat_time = #{record.creatTime,jdbcType=TIMESTAMP}");
+        if (record.getCreateTime() != null) {
+            sql.SET("create_time = #{record.createTime,jdbcType=TIMESTAMP}");
         }
         
         if (record.getUserInfo() != null) {
-            sql.SET("user_info = #{record.userInfo,jdbcType=CHAR}");
+            sql.SET("user_info = #{record.userInfo,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getImei() != null) {
+            sql.SET("imei = #{record.imei,jdbcType=VARCHAR}");
         }
         
         applyWhere(sql, example, true);
@@ -104,10 +104,10 @@ public class TracingRecordSqlProvider {
         sql.UPDATE("tracing_record");
         
         sql.SET("id = #{record.id,jdbcType=INTEGER}");
-        sql.SET("latitude = #{record.latitude,jdbcType=DOUBLE}");
-        sql.SET("longitude = #{record.longitude,jdbcType=DOUBLE}");
-        sql.SET("creat_time = #{record.creatTime,jdbcType=TIMESTAMP}");
-        sql.SET("user_info = #{record.userInfo,jdbcType=CHAR}");
+        sql.SET("am_location_str = #{record.amLocationStr,jdbcType=VARCHAR}");
+        sql.SET("create_time = #{record.createTime,jdbcType=TIMESTAMP}");
+        sql.SET("user_info = #{record.userInfo,jdbcType=VARCHAR}");
+        sql.SET("imei = #{record.imei,jdbcType=VARCHAR}");
         
         TracingRecordQuery example = (TracingRecordQuery) parameter.get("example");
         applyWhere(sql, example, true);
@@ -118,20 +118,20 @@ public class TracingRecordSqlProvider {
         SQL sql = new SQL();
         sql.UPDATE("tracing_record");
         
-        if (record.getLatitude() != null) {
-            sql.SET("latitude = #{latitude,jdbcType=DOUBLE}");
+        if (record.getAmLocationStr() != null) {
+            sql.SET("am_location_str = #{amLocationStr,jdbcType=VARCHAR}");
         }
         
-        if (record.getLongitude() != null) {
-            sql.SET("longitude = #{longitude,jdbcType=DOUBLE}");
-        }
-        
-        if (record.getCreatTime() != null) {
-            sql.SET("creat_time = #{creatTime,jdbcType=TIMESTAMP}");
+        if (record.getCreateTime() != null) {
+            sql.SET("create_time = #{createTime,jdbcType=TIMESTAMP}");
         }
         
         if (record.getUserInfo() != null) {
-            sql.SET("user_info = #{userInfo,jdbcType=CHAR}");
+            sql.SET("user_info = #{userInfo,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getImei() != null) {
+            sql.SET("imei = #{imei,jdbcType=VARCHAR}");
         }
         
         sql.WHERE("id = #{id,jdbcType=INTEGER}");

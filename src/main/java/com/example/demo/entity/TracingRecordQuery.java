@@ -165,183 +165,133 @@ public class TracingRecordQuery {
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeIsNull() {
-            addCriterion("latitude is null");
+        public Criteria andAmLocationStrIsNull() {
+            addCriterion("am_location_str is null");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeIsNotNull() {
-            addCriterion("latitude is not null");
+        public Criteria andAmLocationStrIsNotNull() {
+            addCriterion("am_location_str is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeEqualTo(Double value) {
-            addCriterion("latitude =", value, "latitude");
+        public Criteria andAmLocationStrEqualTo(String value) {
+            addCriterion("am_location_str =", value, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeNotEqualTo(Double value) {
-            addCriterion("latitude <>", value, "latitude");
+        public Criteria andAmLocationStrNotEqualTo(String value) {
+            addCriterion("am_location_str <>", value, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeGreaterThan(Double value) {
-            addCriterion("latitude >", value, "latitude");
+        public Criteria andAmLocationStrGreaterThan(String value) {
+            addCriterion("am_location_str >", value, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeGreaterThanOrEqualTo(Double value) {
-            addCriterion("latitude >=", value, "latitude");
+        public Criteria andAmLocationStrGreaterThanOrEqualTo(String value) {
+            addCriterion("am_location_str >=", value, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeLessThan(Double value) {
-            addCriterion("latitude <", value, "latitude");
+        public Criteria andAmLocationStrLessThan(String value) {
+            addCriterion("am_location_str <", value, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeLessThanOrEqualTo(Double value) {
-            addCriterion("latitude <=", value, "latitude");
+        public Criteria andAmLocationStrLessThanOrEqualTo(String value) {
+            addCriterion("am_location_str <=", value, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeIn(List<Double> values) {
-            addCriterion("latitude in", values, "latitude");
+        public Criteria andAmLocationStrLike(String value) {
+            addCriterion("am_location_str like", value, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeNotIn(List<Double> values) {
-            addCriterion("latitude not in", values, "latitude");
+        public Criteria andAmLocationStrNotLike(String value) {
+            addCriterion("am_location_str not like", value, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeBetween(Double value1, Double value2) {
-            addCriterion("latitude between", value1, value2, "latitude");
+        public Criteria andAmLocationStrIn(List<String> values) {
+            addCriterion("am_location_str in", values, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLatitudeNotBetween(Double value1, Double value2) {
-            addCriterion("latitude not between", value1, value2, "latitude");
+        public Criteria andAmLocationStrNotIn(List<String> values) {
+            addCriterion("am_location_str not in", values, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeIsNull() {
-            addCriterion("longitude is null");
+        public Criteria andAmLocationStrBetween(String value1, String value2) {
+            addCriterion("am_location_str between", value1, value2, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeIsNotNull() {
-            addCriterion("longitude is not null");
+        public Criteria andAmLocationStrNotBetween(String value1, String value2) {
+            addCriterion("am_location_str not between", value1, value2, "amLocationStr");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeEqualTo(Double value) {
-            addCriterion("longitude =", value, "longitude");
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("create_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeNotEqualTo(Double value) {
-            addCriterion("longitude <>", value, "longitude");
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("create_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeGreaterThan(Double value) {
-            addCriterion("longitude >", value, "longitude");
+        public Criteria andCreateTimeEqualTo(Date value) {
+            addCriterion("create_time =", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeGreaterThanOrEqualTo(Double value) {
-            addCriterion("longitude >=", value, "longitude");
+        public Criteria andCreateTimeNotEqualTo(Date value) {
+            addCriterion("create_time <>", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeLessThan(Double value) {
-            addCriterion("longitude <", value, "longitude");
+        public Criteria andCreateTimeGreaterThan(Date value) {
+            addCriterion("create_time >", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeLessThanOrEqualTo(Double value) {
-            addCriterion("longitude <=", value, "longitude");
+        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("create_time >=", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeIn(List<Double> values) {
-            addCriterion("longitude in", values, "longitude");
+        public Criteria andCreateTimeLessThan(Date value) {
+            addCriterion("create_time <", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeNotIn(List<Double> values) {
-            addCriterion("longitude not in", values, "longitude");
+        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("create_time <=", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeBetween(Double value1, Double value2) {
-            addCriterion("longitude between", value1, value2, "longitude");
+        public Criteria andCreateTimeIn(List<Date> values) {
+            addCriterion("create_time in", values, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andLongitudeNotBetween(Double value1, Double value2) {
-            addCriterion("longitude not between", value1, value2, "longitude");
+        public Criteria andCreateTimeNotIn(List<Date> values) {
+            addCriterion("create_time not in", values, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreatTimeIsNull() {
-            addCriterion("creat_time is null");
+        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+            addCriterion("create_time between", value1, value2, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreatTimeIsNotNull() {
-            addCriterion("creat_time is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreatTimeEqualTo(Date value) {
-            addCriterion("creat_time =", value, "creatTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreatTimeNotEqualTo(Date value) {
-            addCriterion("creat_time <>", value, "creatTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreatTimeGreaterThan(Date value) {
-            addCriterion("creat_time >", value, "creatTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreatTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("creat_time >=", value, "creatTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreatTimeLessThan(Date value) {
-            addCriterion("creat_time <", value, "creatTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreatTimeLessThanOrEqualTo(Date value) {
-            addCriterion("creat_time <=", value, "creatTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreatTimeIn(List<Date> values) {
-            addCriterion("creat_time in", values, "creatTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreatTimeNotIn(List<Date> values) {
-            addCriterion("creat_time not in", values, "creatTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreatTimeBetween(Date value1, Date value2) {
-            addCriterion("creat_time between", value1, value2, "creatTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreatTimeNotBetween(Date value1, Date value2) {
-            addCriterion("creat_time not between", value1, value2, "creatTime");
+        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("create_time not between", value1, value2, "createTime");
             return (Criteria) this;
         }
 
@@ -412,6 +362,76 @@ public class TracingRecordQuery {
 
         public Criteria andUserInfoNotBetween(String value1, String value2) {
             addCriterion("user_info not between", value1, value2, "userInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiIsNull() {
+            addCriterion("imei is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiIsNotNull() {
+            addCriterion("imei is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiEqualTo(String value) {
+            addCriterion("imei =", value, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiNotEqualTo(String value) {
+            addCriterion("imei <>", value, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiGreaterThan(String value) {
+            addCriterion("imei >", value, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiGreaterThanOrEqualTo(String value) {
+            addCriterion("imei >=", value, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiLessThan(String value) {
+            addCriterion("imei <", value, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiLessThanOrEqualTo(String value) {
+            addCriterion("imei <=", value, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiLike(String value) {
+            addCriterion("imei like", value, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiNotLike(String value) {
+            addCriterion("imei not like", value, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiIn(List<String> values) {
+            addCriterion("imei in", values, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiNotIn(List<String> values) {
+            addCriterion("imei not in", values, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiBetween(String value1, String value2) {
+            addCriterion("imei between", value1, value2, "imei");
+            return (Criteria) this;
+        }
+
+        public Criteria andImeiNotBetween(String value1, String value2) {
+            addCriterion("imei not between", value1, value2, "imei");
             return (Criteria) this;
         }
     }

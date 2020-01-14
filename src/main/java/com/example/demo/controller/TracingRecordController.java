@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dao.TracingRecordDao;
+import com.example.demo.dto.QueryParam;
 import com.example.demo.entity.TracingRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,10 +25,8 @@ public class TracingRecordController {
     }
 
     @RequestMapping("/getRecord")
-    public List<TracingRecord> saveRecord(Map<String, String> param) {
-        Integer hours = param.get("hours") == null ? 0 : Integer.parseInt(param.get("hours"));
-        String userInfo = param.get("userInfo");
-        List<TracingRecord> records = tracingRecordDao.getRecord(hours,userInfo);
+    public List<TracingRecord> getRecord(@RequestBody QueryParam param) {
+        List<TracingRecord> records = tracingRecordDao.getRecord(param);
         return records;
     }
 }
